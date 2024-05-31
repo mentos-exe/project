@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Шифрович</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Главная</string>
+    <string name="menu_enc1">Шифр Цезаря</string>
+    <string name="menu_enc2">Шифр Атбаш</string>
+    <string name="menu_enc3">Шифр Вернама</string>
+    <string name="menu_home2">Данная программа предназначена для защиты конфиденциальной информации от доступа посторонних лиц. Она использует различные алгоритмы шифрования, чтобы преобразовать текстовые данные в другие символы.</string>
+</resources>
