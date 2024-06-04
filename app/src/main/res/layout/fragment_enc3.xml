@@ -7,6 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.enc3.Enc3Fragment">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:gravity="center"
+        android:text="В первых двух полях ввода можно использовать только русский алфавит. Ключ должен быть такого же размера как и слово."
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.555"
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/encoder"
         android:layout_width="wrap_content"
@@ -56,31 +71,33 @@
 
     <EditText
         android:id="@+id/text"
-        android:layout_width="248dp"
-        android:layout_height="41dp"
+        android:layout_width="278dp"
+        android:layout_height="48dp"
         android:ems="10"
-        android:hint="напиши сюда что-нибудь"
+        android:gravity="center"
+        android:hint="Напишите сюда что-нибудь"
         android:inputType="text"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171" />
 
     <EditText
         android:id="@+id/key"
-        android:layout_width="254dp"
-        android:layout_height="48dp"
+        android:layout_width="244dp"
+        android:layout_height="47dp"
         android:ems="10"
+        android:hint="Ключ"
+        android:gravity="center"
         android:inputType="text"
-        android:hint="ключ"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/encoder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.544" />
 </androidx.constraintlayout.widget.ConstraintLayout>

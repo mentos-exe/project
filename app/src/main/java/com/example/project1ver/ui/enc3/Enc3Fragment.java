@@ -41,17 +41,18 @@ public class Enc3Fragment extends Fragment {
 
                 boolean hasRussian = checkForRussianLetters(request);
                 if(hasRussian) {
-                   if (request.length() != key.length()){
-                       showAlertDialog0();
-                   }
+                    if (request.length() != key.length()) {
+                        showAlertDialog0();
+                    } else {
 
-                   StringBuilder chipherText = new StringBuilder();
-                    for (int i = 0; i < request.length(); i++) {
-                        char encriptedChar = (char) (request.charAt(i)^key.charAt(i));
-                        chipherText.append(encriptedChar);
+                        StringBuilder chipherText = new StringBuilder();
+                        for (int i = 0; i < request.length(); i++) {
+                            char encriptedChar = (char) (request.charAt(i) ^ key.charAt(i));
+                            chipherText.append(encriptedChar);
+                        }
+
+                        resultTextView.setText(chipherText);
                     }
-
-                    resultTextView.setText(chipherText);
                 }else{
                     showAlertDialog();
                 }

@@ -69,26 +69,29 @@ public class Enc2Fragment extends Fragment {
 
                 String request = String.valueOf(resultTextView.getText());
                 boolean hasRussianLetters = checkForRussianLetters(request);
-                if (hasRussianLetters) {
-                    String russianAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-                    String reversedAlphabet = "яюэьыъщшчцхфутсрпонмлкйизжёедгвба";
 
-                    StringBuilder decryptedText = new StringBuilder();
 
-                    for (int i = 0; i < request.length(); i++) {
-                        char currentChar = request.charAt(i);
-                        if (Character.isLetter(currentChar)) {
-                            int index = reversedAlphabet.indexOf(Character.toLowerCase(currentChar));
-                            char decryptedChar = russianAlphabet.charAt(index);
-                            decryptedText.append(Character.isUpperCase(currentChar) ? Character.toUpperCase(decryptedChar) : decryptedChar);
-                        } else {
-                            decryptedText.append(currentChar);
+                    if (hasRussianLetters) {
+                        String russianAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+                        String reversedAlphabet = "яюэьыъщшчцхфутсрпонмлкйизжёедгвба";
+
+                        StringBuilder decryptedText = new StringBuilder();
+
+                        for (int i = 0; i < request.length(); i++) {
+                            char currentChar = request.charAt(i);
+                            if (Character.isLetter(currentChar)) {
+                                int index = reversedAlphabet.indexOf(Character.toLowerCase(currentChar));
+                                char decryptedChar = russianAlphabet.charAt(index);
+                                decryptedText.append(Character.isUpperCase(currentChar) ? Character.toUpperCase(decryptedChar) : decryptedChar);
+                            } else {
+                                decryptedText.append(currentChar);
+                            }
                         }
+                        resultTextView2.setText(decryptedText);
+
+                    } else {
+                        showAlertDialog();
                     }
-                    resultTextView2.setText(decryptedText);
-                }else{
-                    showAlertDialog();
-                }
 
             }
         });

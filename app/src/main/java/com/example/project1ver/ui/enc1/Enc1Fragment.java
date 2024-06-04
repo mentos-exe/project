@@ -30,7 +30,7 @@ public class Enc1Fragment extends Fragment {
                 new ViewModelProvider(this).get(Enc1ViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_enc1, container, false);
-
+        final TextView textView= root.findViewById(R.id.textView);
 
        final EditText editTextEnc1 = root.findViewById(R.id.editTextEnc1);
        final Button button = root.findViewById(R.id.button);
@@ -46,19 +46,24 @@ public class Enc1Fragment extends Fragment {
                int key = Integer.parseInt(number.getText().toString());
                boolean hasRussianLetters = checkForRussianLetters(s1);
               boolean hasnumber = checkFornumbers(key);
-               if (hasRussianLetters && hasnumber){
-               char [] seregaPirat = new char[ s1.length()];
-               for (int i = 0; i < s1.length(); i++) {
-                   char simvol = s1.charAt(i);
-                   int index = ALPHABET.indexOf(simvol);
-                   int newIn = index+key;
-                   char neS= ALPHABET.charAt(newIn);
-                   seregaPirat[i] += neS  ;
-               }
-               resultTextView.setText(String.valueOf(seregaPirat));
-               } else {
-                   showAlertDialog();
-               }
+
+
+                  if (hasRussianLetters && hasnumber){
+                      char [] seregaPirat = new char[ s1.length()];
+                      for (int i = 0; i < s1.length(); i++) {
+                          char simvol = s1.charAt(i);
+                          int index = ALPHABET.indexOf(simvol);
+                          int newIn = index+key;
+                          char neS= ALPHABET.charAt(newIn);
+                          seregaPirat[i] += neS  ;
+                      }
+                      resultTextView.setText(String.valueOf(seregaPirat));
+                  } else  {
+                      showAlertDialog();
+                  }
+
+
+
 
            }
        });
@@ -98,7 +103,7 @@ public class Enc1Fragment extends Fragment {
 
     }
 
- private boolean checkForRussianLetters(String text) {
+    private boolean checkForRussianLetters(String text) {
         for (char c : text.toCharArray()) {
             if ((c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я') || c == 'ё' || c == 'Ё') {
                 return true;
@@ -127,7 +132,21 @@ public class Enc1Fragment extends Fragment {
 
                 .show();
     }
+    private void showAlertDialog2() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Ошибка")
+                .setMessage("Вы заполнили не все поля ввода")
+                // Дополнительные действия, например, добавление кнопок
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Действие при нажатии на кнопку "OK"
+                        dialog.dismiss();
 
+                    }
+                })
+
+                .show();
+    }
 
 
 }

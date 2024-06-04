@@ -7,13 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.enc2.Enc2Fragment">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="209dp"
+        android:layout_height="59dp"
+        android:gravity="center"
+        android:text="Можно использовать только русский алфавит."
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.512"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/text"
-        android:layout_width="258dp"
-        android:layout_height="44dp"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
         android:ems="10"
-        android:hint="напиши сюда что-нибудь"
+        android:gravity="center"
+        android:hint="Напишите сюда что-нибудь"
         android:inputType="text"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
