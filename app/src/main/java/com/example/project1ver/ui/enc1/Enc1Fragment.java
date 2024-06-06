@@ -49,15 +49,15 @@ public class Enc1Fragment extends Fragment {
 
 
                   if (hasRussianLetters && hasnumber){
-                      char [] seregaPirat = new char[ s1.length()];
+                      char [] newLine = new char[ s1.length()];
                       for (int i = 0; i < s1.length(); i++) {
                           char simvol = s1.charAt(i);
                           int index = ALPHABET.indexOf(simvol);
                           int newIn = index+key;
                           char neS= ALPHABET.charAt(newIn);
-                          seregaPirat[i] += neS  ;
+                          newLine[i] += neS  ;
                       }
-                      resultTextView.setText(String.valueOf(seregaPirat));
+                      resultTextView.setText(String.valueOf(newLine));
                   } else  {
                       showAlertDialog();
                   }
@@ -81,15 +81,15 @@ public class Enc1Fragment extends Fragment {
                 int key = Integer.parseInt(number.getText().toString());
                 boolean hasnumber = checkFornumbers(key);
                 if (hasRussianLetters && hasnumber) {
-                    char [] seregaPirat = new char[ s1.length()];
+                    char [] newLine = new char[ s1.length()];
                     for (int i = 0; i < s1.length(); i++) {
                         char simvol = s1.charAt(i);
                         int index = ALPHABET.indexOf(simvol);
                         int newIn = index-key;
                         char neS= ALPHABET.charAt(newIn);
-                        seregaPirat[i] += neS  ;
+                        newLine[i] += neS  ;
                     }
-                    resultTextView2.setText(String.valueOf(seregaPirat));
+                    resultTextView2.setText(String.valueOf(newLine));
 
                 } else {
                     showAlertDialog();
