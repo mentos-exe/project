@@ -22,52 +22,52 @@
         app:layout_constraintVertical_bias="0.555"
         tools:ignore="MissingConstraints" />
 
-    <Button
+     <Button
         android:id="@+id/encoder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.417" />
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        app:layout_constraintVertical_bias="0.276" />
 
-    <EditText
+   <EditText
         android:id="@+id/resultTextView"
-        android:layout_width="202dp"
-        android:layout_height="47dp"
+        android:layout_width="245dp"
+        android:layout_height="49dp"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562" />
-
-    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/encoder"
+        app:layout_constraintVertical_bias="0.122" />
+    
+     <TextView
         android:id="@+id/resultTextView2"
         android:layout_width="202dp"
         android:layout_height="47dp"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811" />
+        app:layout_constraintTop_toBottomOf="@+id/decoder"
+        app:layout_constraintVertical_bias="0.286" />
 
-   <Button
+    <Button
         android:id="@+id/decoder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
+        app:layout_constraintVertical_bias="0.2" />
 
     <EditText
         android:id="@+id/text"
@@ -90,14 +90,13 @@
         android:layout_width="244dp"
         android:layout_height="47dp"
         android:ems="10"
-        android:hint="Ключ"
         android:gravity="center"
+        android:hint="Ключ"
         android:inputType="text"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/encoder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintTop_toBottomOf="@+id/text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
